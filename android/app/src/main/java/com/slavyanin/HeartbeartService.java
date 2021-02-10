@@ -65,14 +65,16 @@ public class HeartbeartService extends Service {
         createNotificationChannel();
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-        Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle("Heartbeat service")
-                .setContentText("Running...")
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentIntent(contentIntent)
-                .setOngoing(true)
-                .build();
-        startForeground(SERVICE_NOTIFICATION_ID, notification);
+        
+        // Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
+        //         .setContentTitle("Heartbeat service")
+        //         .setContentText("Running...")
+        //         .setSmallIcon(R.mipmap.ic_launcher)
+        //         .setContentIntent(contentIntent)
+        //         .setOngoing(true)
+        //         .build();
+        // startForeground(SERVICE_NOTIFICATION_ID, notification);
+        
         return START_STICKY;
     }
 
